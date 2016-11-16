@@ -21,7 +21,7 @@ class SwaggerUIController extends Controller
             $url = $docUrl;
         } elseif (strpos($docUrl, '/') === 0) {
             //If starts with "/", interpret as an asset.
-            $url = $this->get('templating.helper.assets')->getUrl($docUrl);
+            $url = $this->get('assets.packages')->getUrl($docUrl);
         } else {
             // else, interpret as route-name.
             $url = $this->generateUrl($docUrl);
